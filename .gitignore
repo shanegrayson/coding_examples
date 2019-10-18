@@ -1,0 +1,5 @@
+# Ignoring Eclipse Debug, .settings, .cproject, and .project
+.project
+.cproject
+/Debug/
+/.settings/
