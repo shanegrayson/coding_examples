@@ -11,9 +11,14 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "chapter_03_01.c"
+#include "chapter_03_02.c"
 
-char array01[] = "Hello from Chapter 3";
+int ordered_array[] = { 1, 2, 3, 4, 5, 6 };
+char string_02_01[] = "Here spaces.";
+char string_02_02[] = "Here[SPC]spaces.";
 
-void chapter_03_01(char *array);
+void chapter_03_01(int, int[], int);
+void chapter_03_02(char *array);
 
 #endif /* HEADER_H_ */
