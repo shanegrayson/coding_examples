@@ -5,4 +5,7 @@
  *      Author: Shane
  */
 
-
+void chapter_03_06(int n, char *array)
+{
+    printf("%d %s", n, array);
+}
