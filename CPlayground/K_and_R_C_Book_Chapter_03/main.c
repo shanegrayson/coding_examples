@@ -19,7 +19,10 @@ int main() {
     chapter_03_02(string_02_02);
     printf("\n\n");
 
-    printf("Running: chapter_03_02()\n");
+    printf("Running: chapter_03_03()\n");
+    chapter_03_03(string_03_01, string_03_02);
+    chapter_03_03(string_03_03, string_03_04);
+    chapter_03_03(string_03_05, string_03_06);
     printf("\n\n");
     return 0;
 }
