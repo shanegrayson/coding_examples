@@ -8,7 +8,8 @@
 
 #include "header.h"
 
-int main() {
+int main() 
+{
     printf("Running: chapter_03_01()\n");
     chapter_03_01(2, ordered_array, 5);
     printf("\n\n");
