@@ -28,6 +28,13 @@ augmented_deepshadow_axe = CreateWeapon.new(003, "Augmeented Deepshadow Axe", 12
 the_kings_axe = CreateWeapon.new(004, "The King's Axe", 117, 476, 434, 304, 0)
 super_test_axe = CreateWeapon.new(005, "Super Axe", 150, 700, 600, 500, 400)
 
+# Materia that can be used in the weapons
+#
+crit_viii = 60
+det_viii = 60
+ten_viii = 60
+sks_viii = 60
+
 item_arr = [
 	edengrace_axe,
 	edengrace_nosks_axe,
