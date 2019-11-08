@@ -1,5 +1,8 @@
 #include <iostream>
 
+/*
+ * Just the good ol' Hello world
+ */
 int main()
 {
     std::cout << "Something hell";
