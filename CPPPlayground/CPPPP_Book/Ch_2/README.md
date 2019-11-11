@@ -66,11 +66,11 @@ std::cout << "Hellow, World\n";
 **BA**:
 
 ```
-std::cout << "Hello, World" << std::endl;
+cout << "Hello, World" << endl;
 
 \\or
 
-std::cout << "Hellow, World\n";
+cout << "Hellow, World\n";
 ```
 
 ## Questions 5:
