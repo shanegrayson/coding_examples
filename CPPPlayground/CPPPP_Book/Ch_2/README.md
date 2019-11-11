@@ -9,9 +9,13 @@ Answer to review questions from C++ Primer Plus
 
 What are the modules of the C++ Programming language called?
 
-**MA**: Functions
+**MA**: 
 
-**BA**: They are called functions
+Functions
+
+**BA**: 
+
+They are called functions
 
 ## Questions 2: 
 
@@ -21,9 +25,13 @@ What does the following Preprocessor Directive do?
 #include <iostream>
 ```
 
-**MA**: This brings in the istream and ostream header files.
+**MA**: 
 
-**BA**: It causes the contents of the iostream file to be substituted for this directive before final compilation.
+This brings in the istream and ostream header files.
+
+**BA**: 
+
+It causes the contents of the iostream file to be substituted for this directive before final compilation.
 
 ## Questions 3:
 
@@ -33,9 +41,13 @@ What does the following statement do?
 using namespace std
 ```
 
-**MA**: Determing on where it is placed it lets you use the namespace std (which i dont recall the book mentioning what it is called) thought the scope of which it is declared.
+**MA**: 
+
+Determing on where it is placed it lets you use the namespace std (which i dont recall the book mentioning what it is called) thought the scope of which it is declared.
 
 **BA**:
+
+It makes definitions made in the std namespace available to a program.
 
 ## Questions 4:
 
@@ -53,6 +65,14 @@ std::cout << "Hellow, World\n";
 
 **BA**:
 
+```
+std::cout << "Hello, World" << std::endl;
+
+\\or
+
+std::cout << "Hellow, World\n";
+```
+
 ## Questions 5:
 
 What statement would you use to create an integer variable with the name `cheese`?
@@ -64,6 +84,10 @@ int cheese;
 ```
 
 **BA**:
+
+```
+int cheese;
+```
 
 ## Questions 6:
 
@@ -77,6 +101,10 @@ cheese = 32;
 
 **BA**:
 
+```
+cheeses = 32;
+```
+
 ## Questions 7:
 
 What statement would you use to read a value from keyboard input into the variable `cheese`?
@@ -89,6 +117,10 @@ std::cin >> cheese;
 
 **BA**:
 
+```
+cin >> cheeses;
+```
+
 ## Questions 8:
 
 What statement would you use to print "We have X varieties of cheese," where the current value of the `cheese` variable replaces X.
@@ -100,6 +132,10 @@ std::cout << "We have " << cheese << " varieties of cheese << std::endl;
 ```
 
 **BA**:
+
+```
+cout << "We have " << cheeses << " varieties of cheese\n";
+```
 
 ## Questions 9:
 
@@ -121,6 +157,24 @@ int prune(void);
 
 **BA**:
 
+The fucntion `froop()`expects to be called with on argument, which will be the type `double`, and that the function will return a type `int` value. For instance, it could be used as follows:
+
+```
+int gval = froop(3.14);
+```
+
+The funtion `rattle()` has no return value and expect an int argument. For isntance, it could be used as follows:
+
+```
+rattle(37);
+```
+
+The function `prune()` returns an `int` and expects to be used without an argument. For instance, it could used as follows:
+
+```
+int residue = prune();
+```
+
 ## Questions 10:
 
 When do you not have to use the keyword return when you define a function?
@@ -130,6 +184,12 @@ When do you not have to use the keyword return when you define a function?
 When the function return type is `void`. But, if I recall correctly, sometimes the C++ Compiler you are using might assume a return type of 0 is one is not stated.
 
 **BA**:
+
+You dont have to use `return` in a function when the function has the return type `void`. However, you can use it if you don't give a return value:
+
+```
+return;
+```
 
 ## Question 11:
 
@@ -148,6 +208,5 @@ And suppose the compiler complains that cout is an unknownidentifier. What is th
 3. Not sure of the third way.
 
 **BA**:
-1.
-2.
-3.
+
+Book does not give an answer.
