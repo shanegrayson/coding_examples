@@ -14,10 +14,10 @@ I am making the assumption that the books is talking about signed and unsigned v
 
 C++ has more than one integer type to represent values. They differ in amount of meemory used and whether or not the value is signed or unsigned. The value sizes are usually followed:
 
--short: 16 bits. (2 bytes)
--int: at least as bit as short. (4 bytes)
--long: int is at least 32 bits. (4 bytes)
--long long: int is at least 64 bits. (8 bytes)
+- short: 16 bits. (2 bytes)
+- int: at least as bit as short. (4 bytes)
+- long: int is at least 32 bits. (4 bytes)
+- long long: int is at least 64 bits. (8 bytes)
 
 **BA**: 
 
