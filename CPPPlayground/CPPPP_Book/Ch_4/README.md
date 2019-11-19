@@ -1,4 +1,4 @@
-# Chapter 3: Questions and Answers
+# Chapter 4: Questions and Answers
 Answer to review questions from C++ Primer Plus
 
 **MA** -> My Answers without refering to the back of the book for an answer.
@@ -239,7 +239,7 @@ delete [] p_ua;
 
 **BA**:
 
-Assuming <iostream> and <vectors> is available.
+Assuming \<iostream\> and \<vectors\> is available.
 
 ```
 unsigned int size;
