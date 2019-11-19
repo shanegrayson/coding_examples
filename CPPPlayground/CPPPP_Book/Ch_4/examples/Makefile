@@ -1,4 +1,4 @@
-run: arrayone.cpp strings.cpp instr1.cpp instr2.cpp instr3.cpp numstr.cpp strtype1.cpp strtype2.cpp strtype3.cpp strtype4.cpp structure.cpp assgn_st.cpp arrstruc.cpp address.cpp pointer.cpp init_ptr.cpp use_new.cpp arraynew.cpp addpntrs.cpp ptrstr.cpp newstrct.cpp
+run: arrayone.cpp strings.cpp instr1.cpp instr2.cpp instr3.cpp numstr.cpp strtype1.cpp strtype2.cpp strtype3.cpp strtype4.cpp structure.cpp assgn_st.cpp arrstruc.cpp address.cpp pointer.cpp init_ptr.cpp use_new.cpp arraynew.cpp addpntrs.cpp ptrstr.cpp newstrct.cpp delete.cpp mixtypes.cpp choices.cpp
 	g++ arrayone.cpp -o run_arrayone
 	g++ strings.cpp -o run_strings
 	g++ instr1.cpp -o run_instr1
@@ -20,3 +20,6 @@ run: arrayone.cpp strings.cpp instr1.cpp instr2.cpp instr3.cpp numstr.cpp strtyp
 	g++ addpntrs.cpp -o run_addpntrs
 	g++ ptrstr.cpp -o run_ptrstr
 	g++ newstrct.cpp -o run_newstrct
+	g++ delete.cpp -o run_delete
+	g++ mixtypes.cpp -o run_mixtypes
+	g++ choices.cpp -o run_choices
