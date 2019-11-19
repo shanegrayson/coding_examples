@@ -1,0 +1,22 @@
+run: arrayone.cpp strings.cpp instr1.cpp instr2.cpp instr3.cpp numstr.cpp strtype1.cpp strtype2.cpp strtype3.cpp strtype4.cpp structure.cpp assgn_st.cpp arrstruc.cpp address.cpp pointer.cpp init_ptr.cpp use_new.cpp arraynew.cpp addpntrs.cpp ptrstr.cpp newstrct.cpp
+	g++ arrayone.cpp -o run_arrayone
+	g++ strings.cpp -o run_strings
+	g++ instr1.cpp -o run_instr1
+	g++ instr2.cpp -o run_instr2
+	g++ instr3.cpp -o run_instr3
+	g++ numstr.cpp -o run_numstr
+	g++ strtype1.cpp -o run_strtype1
+	g++ strtype2.cpp -o run_strtype2
+	g++ strtype3.cpp -o run_strtype3
+	g++ strtype4.cpp -o run_strtype4
+	g++ structure.cpp -o run_structure
+	g++ assgn_st.cpp -o run_assgn_st
+	g++ arrstruc.cpp -o run_arrstruc
+	g++ address.cpp -o run_address
+	g++ pointer.cpp -o run_pointer
+	g++ init_ptr.cpp -o run_init_ptr
+	g++ use_new.cpp -o run_use_new
+	g++ arraynew.cpp -o run_arraynew
+	g++ addpntrs.cpp -o run_addpntrs
+	g++ ptrstr.cpp -o run_ptrstr
+	g++ newstrct.cpp -o run_newstrct
