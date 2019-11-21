@@ -1,4 +1,4 @@
-run: forloop.cpp num_test.cpp express.cpp formore.cpp bigstep.cpp forstr1.cpp plus_one.cpp
+run: forloop.cpp num_test.cpp express.cpp formore.cpp bigstep.cpp forstr1.cpp plus_one.cpp block.cpp forstr2.cpp equal.cpp compstr1.cpp compstr2.cpp while.cpp waiting.cpp dowhile.cpp textin1.cpp textin2.cpp textin3.cpp textin4.cpp nested.cpp
 	g++ forloop.cpp -o run_forloop
 	g++ num_test.cpp -o run_num_test
 	g++ express.cpp -o run_express
@@ -6,3 +6,16 @@ run: forloop.cpp num_test.cpp express.cpp formore.cpp bigstep.cpp forstr1.cpp pl
 	g++ bigstep.cpp -o run_bigstep
 	g++ forstr1.cpp -o run_forstr1
 	g++ plus_one.cpp -o run_plus_one
+	g++ block.cpp -o run_block
+	g++ forstr2.cpp -o run_forstr2
+	g++ equal.cpp -o run_equal
+	g++ compstr1.cpp -o run_compstr1
+	g++ compstr2.cpp -o run_compstr2
+	g++ while.cpp -o run_while
+	g++ waiting.cpp -o run_waiting
+	g++ dowhile.cpp -o run_dowhile
+	g++ textin1.cpp -o run_textin1
+	g++ textin2.cpp -o run_textin2
+	g++ textin3.cpp -o run_textin3
+	g++ textin4.cpp -o run_textin4
+	g++ nested.cpp -o run_nested
