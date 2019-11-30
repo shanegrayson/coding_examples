@@ -39,7 +39,7 @@ int main(void)
     i = 0;
     temp = contribution_size;
     while (temp > 0) {
-        inFile >> (member+i)->name;
+        inFile >> (member+i)->name, 30;
         inFile >> (member+i)->amount;
         --temp, ++i;
     }
