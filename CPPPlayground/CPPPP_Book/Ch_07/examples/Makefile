@@ -1,4 +1,4 @@
-run: calling.cpp protos.cpp twoarg.cpp lotto.cpp arrfun1.cpp arrfun2.cpp arrfun3.cpp arrfun4.cpp strfun.cpp strgback.cpp travel.cpp strctfun.cpp
+run: calling.cpp protos.cpp twoarg.cpp lotto.cpp arrfun1.cpp arrfun2.cpp arrfun3.cpp arrfun4.cpp strfun.cpp strgback.cpp travel.cpp strctfun.cpp strctptr.cpp topfive.cpp arrobj.cpp recur.cpp recur_with_addr.cpp ruler.cpp fun_ptr.cpp arfupt.cpp
 	g++ calling.cpp -o run_calling
 	g++ protos.cpp -o run_protos
 	g++ twoarg.cpp -o run_twoarg
@@ -11,3 +11,11 @@ run: calling.cpp protos.cpp twoarg.cpp lotto.cpp arrfun1.cpp arrfun2.cpp arrfun3
 	g++ strgback.cpp -o run_strgback
 	g++ travel.cpp -o run_travel
 	g++ strctfun.cpp -o run_strctfun
+	g++ strctptr.cpp -o run_strctptr
+	g++ topfive.cpp -o run_topfive
+	g++ arrobj.cpp -o run_arrobj
+	g++ recur.cpp -o run_recur
+	g++ recur_with_addr.cpp -o run_recur_with_addr
+	g++ ruler.cpp -o run_ruler
+	g++ fun_ptr.cpp -o run_fun_ptr
+	g++ arfupt.cpp -o run_arfupt.cpp
