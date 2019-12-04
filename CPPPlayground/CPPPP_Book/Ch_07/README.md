@@ -230,22 +230,43 @@ C++ enables you to pass a structure by value, and it lets you pass the address o
 
 **MA**:
 
-How would you pass it by value?
+Passing by value, you would just the structure as if it were a variable type, such as:
+
+`void show_glitzy(glitz g1);`
+
+To pass it y address you would lock it in with the `const` qualifier and and then point to the first byte of its location in memory, such as:
+
+`void glitz_address(const glitz * g1);`
+
+For passing by address you then would use the `->` arrow operator to retrieve the strcutures values.
+
+You would also need to add `&` address operator to the value you are passing in the calling function, such as:
+
+`glitz_address(&some_glitz);`
 
 **BA**:
 
-
+To pass it by value, you pust pass the structure name `glitz`. To pass it by address, you use the address operator `&` for `&glitz`. Passing by the value automatically protects the original data, but it takes time and memory. Passing by address save time and memory but doesn't protect the original data unless you use the `const` modifier for the function parameter. Also, passing by value means you can use ordinary structure member notation, but passing a pointer means you have to remember to use indirect membership operators.
 
 ## Question 11: 
-The function `judge()` has a type `int` return value. As an argument, it takes the address of a function. The function whose address is passed, in turn, takes a pointer to a `const char` as an argument and returns an `int`. Write the functoin prototype.
+The function `judge()` has a type `int` return value. As an argument, it takes the address of a function. The function whose address is passed, in turn, takes a pointer to a `const char` as an argument and returns an `int`. Write the function prototypes.
 
 **MA**:
 
+```
+int judge(int &funct);
+int funct(const char * str);
+```
 
+I did this wrong, so what is the right thinking behind it? Obviously, the `int judge(` part of the function was easy to get, but what I miss understoond was the "as an arg taes address of funct who address is passed takes a pointer to a const char". This was the examples where you could pass a function with different names but the same return type and arg type.
+
+*NOTE*: This section starts at 361 and would be a good read before heading to the Exercise problems.
 
 **BA**:
 
-
+```
+int judge(int (*pf)(const char *));
+```
 
 ## Question 12: 
 Suppose we have the following structure declaration:
@@ -263,11 +284,50 @@ struct applicant
 
 **MA**:
 
+1. Do:
+```
+void display_applicant(applicant person1)
+{
+    cout << "Name: " << person1.name << endl;
+    cout << "Credit Rating: " << person1.credit_rating << endl;
+    //Didn't notice that credit_rating was an array...
+}
+```
 
+2. Do:
+```
+//LOL I way over thoguht this one...
+void display_app_addr(applicant (*pa)(char *, int))
+{
+    cout << "Name: " << (*pa)->name << endl;
+    cout << "Credit Rating: " << (*pa)->credit_rating << endl;
+}
+```
 
 **BA**:
 
+1. *NOTE*: That if `ap` is an applicant structure, then `ap.credit_ratings` is an array name and `ap.credit_ratings[i]` is an array element.
 
+```
+void display(applicant ap)
+{
+    cout << ap.name << endl;
+    for (int i = 0; i < 3; i++)
+        cout << ap.credit_rating[i] << endl;
+
+}
+```
+
+2. *NOTE*: That if `pa` is a pointer to an applicant structure, then `pa->credit_ratings` is an array name, and `pa->credit_ratings[i]` is an array element.
+
+```
+void show(const applicant * pa)
+{
+    cout << pa->name << endl;
+    for (int i = 0; i < 3; i++)
+        cout << pa->credit_ratings[i] << endl;
+}
+```
 
 ## Question 13: 
 Suppose the functions `f1()` and `f2()` have the following prototypes:
@@ -277,14 +337,36 @@ void f1(applicant * a);
 const char * f2(const applicant * a1, const applicant * a2);
 ```
 
-Declare `p1` as a pointer that points to `f1` abd `p2 as a pointer to `f2`. Declare `ap` as an array of five pointers of the same type as `p1`, and declare `pa` as a pointer to an array of ten pointers of the same type as `p2`. Use `typedef` as an aid.
+Declare `p1` as a pointer that points to `f1` and `p2 as a pointer to `f2`. Declare `ap` as an array of five pointers of the same type as `p1`, and declare `pa` as a pointer to an array of ten pointers of the same type as `p2`. Use `typedef` as an aid.
 
 **MA**:
 
+```
+//So confused how the typedef gets the aliase...
+typedef void f1(applicant * a) tdf1;
+typedef const char * f2(const applicant * a1, const applicant * a2) tdf2;
 
+tdf1 p1 = f1;
+tdf2 p2 = f2;
+
+tdf1 ap[5];
+tdf2 pa[10];
+
+/*
+ * I was close, but I am going to re-read pages 361-371
+ */
+```
 
 **BA**:
 
+```
+typedef void (*p_f1)(applicant *);
+p_f1 p1 = f1;
 
+typedef const char \* (\*p\_f2)(const applicant \*, const applicant \*);
+p\_f2 p2 = f2;
 
+p\_f1 ap[5];
+p\_f2 (\*pa)[10];
+```
 
