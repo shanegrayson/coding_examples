@@ -9,11 +9,11 @@ Answer to review questions from C++ Primer Plus
 What kinds of functions are good candidates for inline status?
 
 **MA**:
-
+Code that has a short time of execution instead of time needed to handle the execution. If code execution time is short then this can save a large amount of time used by the non-non inline calls.
 
 
 **BA**:
-
+Short, nonrecursive functions that can fit in one line of code are good candidates for inline funcitons.
 
 
 ## Question 2: 
@@ -21,26 +21,47 @@ Suppose the song() function has this prototype:
 
 `void song(const char * name, int times);`
 
-1. How would you modify the prototype so that the default value for *times* it 1?
+1. How would you modify the prototype so that the default value for `times` it 1?
 2. What changes would you make in the function definition?
 3. Can you provide a default value of `"O, My Papa"` for *name*?
 
+
 **MA**:
+
+1. `void song(const char * name, int times = 1)`
+2. You would have to remove the defualt value `int times`
+3. Yes, you can set the defualt peramteter, only in the prototype though. 
 
 
 **BA**:
 
+1. `void song(const char * name, int times = 1)`
+2. None. Only protoypes contain the default value.
+3. Yes, provided that you retain the defualt value for `times`:
+`void song(char * name = "O' My Papa", int times = 1);`
 
 
 ## Question 3: 
 Write overloaded versions of iquote(), a function that displays its argument enclosed in double quotation marks. Write three versions: one for `int` argument, `double`, and `string`.
 
 **MA**:
-
+```
+void iquote(int a, int b){cout << a << b;};
+void iquote(double a, double b){cout << a << b;};
+void iquote(string a, string b){cout << a << b;};
+```
+I obviously misunderstood what the question was asking
 
 
 **BA**:
+You can use either the string "\"" or the character "" to print a quotation mark. The following functions show both methods:
 
+```
+#include <iostream.h>
+void iquote(int n) {cout << "\"" << n << "\"";}
+void iquote(double x) {cout << '"' << x << '"';}
+void iquote(const char * str) {cout << "\"" << str << "\"";}
+```
 
 
 ## Question 4: 
@@ -57,16 +78,58 @@ struct box
 }
 ```
 
-1. Write a function that has a reference to a box structure as it formal argument and displays the value of each memeber.
+1. Write a function that has a reference to a `box` structure as it formal argument and displays the value of each memeber.
 2. Write a function that has a reference to a `box` structure as its formal argument and sets the `volume` member to the product of the other three dimensions.
 
 **MA**:
 
+1. display each value
 
+```
+void display(const box & bx)
+{
+    using std::cout;
+    cout << "Maker: " << bx.maker;
+    cout << "Height: " << bx.height;
+    cout << "Width: " << bx.width;
+    cout << "Length: " << bx.length;
+    cout << "Volume: " << bx.volume;
+}
+```
+
+2. setting volume
+
+```
+box & display(const box & bx)
+{
+    bx.volume = bx.height * bx.width * bx.length;
+    return bx.volume;
+}
+```
 
 **BA**:
 
+1. display wach value
 
+```
+void show_box(const box & constiner)
+{
+    cout << "Maker: " << contianer.maker;
+    cout << "Height: " << container.height;
+    cout << "Width: " << container.width;
+    cout << "Length: " << container.length;
+    cout << "Volume: " << container.volume;
+}
+```
+
+2. setting volume
+
+```
+void set_volume(box & crate)
+{
+    crate.volume = crate.height * crate.width * crate.length;
+}
+```
 
 ## Question 5: 
 What changes would need be made to Listing 7.15 so that the function `fill()` and `show()` use reference paramters?
