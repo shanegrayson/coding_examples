@@ -136,11 +136,42 @@ What changes would need be made to Listing 7.15 so that the function `fill()` an
 
 **MA**:
 
-
+```
+void fill(std::array<double, Seasons> & pa)
+{
+    ...
+    cin >> pa[i];
+    ...
+}
+void show(const std::array<double, Seasons> & pa)
+{
+    ...
+    total += (*da)[i];
+    ...
+}
+```
 
 **BA**:
 
+First change the prototpyes to the following:
+`void fill(std::array<double, Seasons> & pa)`
+`void show(const std::array<double, Seasons> & pa)`
+*Note*: that show should use const to protect the object,
 
+Next, within main(), change the fill() call to this:
+`fill(expensses);` and there is no change to show();
+
+Next, the new fill() should look like this:
+```
+void fill(std::array<double, Seasons> & pa)
+{
+    ...
+    cin >> pa[i];
+    ...
+}
+```
+
+The only change to show() is just the parameter list. 
 
 ## Question 6: 
 The following are some desired effects. Indicate wherther each can be accomplished with default arguments, function overloading, both, or neither. Provide appropriate prototypes.
@@ -152,33 +183,100 @@ The following are some desired effects. Indicate wherther each can be accomplish
 
 **MA**:
 
+1. both 
+```
+double mass(double density, double volume);
+double mass(double density, double volume = 1.0);
+```
 
+2. both, assuming string useage since not taking an int for char * length
+```
+void repeat(int times, string str1);
+viod repeat(int times = 5, string str1);
+```
+
+3. function overloading
+```
+int average(int x, int y);
+double average(double x, double y);
+```
+
+4. neither. it needs to make the decision in the function.
 
 **BA**:
 
+1. This can be done using a default value for the second argumet
+`double mass(double d, double v = 1.0);`
 
+can also use overloading:
+```
+double mass(double d, double v);
+double mass(double d);
+```
+
+2. You can't use default for the repeat value because you have to provide default values from right to left. You can use overloading.
+```
+void repeat(int times, const char * str);
+void repeat(const char * str);
+```
+
+3. You can use function overloading
+```
+int average(int a, int b);
+double average(double a, double b);
+```
+
+4. You can't do this because both versions would have the same signature.
 
 ## Question 7: 
 Write a fucntion template that returns the larger of its two arguments.
 
 **MA**:
 
-
+```
+template <class T>
+T larger(T a, T b)
+{
+    return a > b ? a : b;
+}
+```
 
 **BA**:
 
-
+template <class T>
+T max(T t1, T t2)
+{
+    return t1 > t2 ? t1 : t2;
+}
 
 ## Question 8: 
 Given the template of Chapter Review Q7 and the `box` structure of Chpater Review Q4, provide a template specialization that takes two `box` arguments and returns the one with the large volume.
 
 **MA**:
 
-
+```
+template <typename T>
+T max(T &a, T &b);
+...
+template <>
+box max<box>(box &b1, box &b2);
+...
+template <>
+box max<box>(box &b1, box &b2)
+{
+    //Needed to just return b1 or b2 structs
+    return b1.volume > b2.volume ? b1.volume : b2.volume;
+}
+```
 
 **BA**:
 
-
+```
+template<> box max(box b1, box b2)
+{
+     return b1.volume > b2.volume ? b1 : b2;   
+}
+```
 
 ## Question 9: 
 What types are assigned to `v1`, `v2`, `v3`, `v4`, and `v5` in the following code (assuming the code is part of a complete program)?
@@ -192,15 +290,20 @@ decltype(rm) v2 = m;
 decltype((m)) v3 = m;
 decltype(g(100)) v4;
 decltype(2.0 * m) v5;
-
 ```
 
 **MA**:
 
-
+1. v1 is type float
+2. v2 is type float &
+3. v3 is type float
+4. v4 is type int
+5. v5 is type float
 
 **BA**:
 
-
-
-
+1. float
+2. float &
+3. float &
+4. int
+5. double
