@@ -15,28 +15,29 @@ What storage scheme would you use for the following situations?
 
 **MA**:
 
-1. Stuff
-2. Stuff
-3. Stuff
-4. Stuff
+1. Automatic storage duration. Let compiler decided.
+2. Static storage durations. File1 would just have it defined globally while file2 would have `extern`
+3. Static storage duration. Would use `static` linkage
+4. Static storgae duration. Would us `static` variable to keep track.
 
 **BA**:
 
-1. Stuff
-2. Stuff
-3. Stuff
-4. Stuff
+1. `homer` is automatically an automatic variable.
+2. `secret` should be defined as an external variable in one file then `externed` in the other file.
+3. `topsecret` cou8ld be defined as a static variable with interal linkage bt prefacing the external definition with the keyword static. Or it could be defined in an unnamed namespace.
+4. `beencalcled` should be defined as a local static varaible by prefacing the declaration with the keyword static.
 
 ## Question 2: 
 Describe the difference between a `using` declaration and a `using` directive:
 
 **MA**:
 
-Stuff
+1. `using` declaration lets you make particular identifiers available. For example: `using std::cout;`
+2. `using` directive makes the entire namespace accessible. For example: `using namespace std;`
 
 **BA**:
 
-Stuff
+A using declaration makes available a single name from a namespace, and it has scope corresponding to the declartive region in which the using declaration occurs. A using directive makes available all the names in the namespace. When you use a using directive, it is as if you have declaredc hte names in the smallest declartive region containing both the using declaration and the namespace itself.
 
 ## Question 3: 
 Rewrite the following so that it doesn't use `using` declarations or `using` directives:
@@ -65,21 +66,63 @@ int main(void)
 
 **MA**:
 
+```
+#include <iostream>
+//using namespace std;
 
+int main(void)
+{
+    double x;
+    
+    std::cout << "Enter value: ";
+    while (! (std::cin >> x))
+    {
+        std::cout << "Bad input: Please entere a number: ";
+        std::cin.clear();
+        while (std::cin.get() != '\n')
+            continue;
+    }
+    std::cout << "Value = " << x << std::endl;
+
+    return 0;
+}
+```
 
 **BA**:
 
+```
+#include <iostream>
+int main(void)
+{
+    double x;
+    
+    std::cout << "Enter value: ";
+    while (! (std::cin >> x))
+    {
+        std::cout << "Bad input: Please entere a number: ";
+        std::cin.clear();
+        while (std::cin.get() != '\n')
+            continue;
+    }
+    std::cout << "Value = " << x << std::endl;
 
+    return 0;
+}
+```
 
 ## Question 4: 
 Rewrite the following so that it uses `using` declarations but not `using` directives:
 
 ```
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 int main(void)
 {
+    using std::cout;
+    using std::cin;
+    using std::endl;
+
     double x;
     
     cout << "Enter value: ";
@@ -98,22 +141,84 @@ int main(void)
 
 **MA**:
 
+```
+#include <iostream>
+//using namespace std;
 
+int main(void)
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
+
+    double x;
+    
+    cout << "Enter value: ";
+    while (! (cin >> x))
+    {
+        cout << "Bad input: Please entere a number: ";
+        cin.clear();
+        while (cin.get() != '\n')
+            continue;
+    }
+    cout << "Value = " << x << endl;
+
+    return 0;
+}
+```
 
 **BA**:
 
+```
+#include <iostream>
+int main(void)
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
+    
+    double x;
+    
+    cout << "Enter value: ";
+    while (! (cin >> x))
+    {
+        cout << "Bad input: Please entere a number: ";
+        cin.clear();
+        while (cin.get() != '\n')
+            continue;
+    }
+    cout << "Value = " << x << endl;
 
+    return 0;
+}
+```
 
 ## Question 5: 
-Suppose you want the average(3, 6) function to return an int average of the two int arguments when it is called in one file, and you want it to return a double average of the two int arguments when it is called in the a second file in the same program. How could you set this up?
+Suppose you want the average(3, 6) function to return an int average of the two int arguments when it is called in one file, and you want it to return a double average of the two int arguments when it is called in the second file in the same program. How could you set this up?
 
 **MA**:
 
-
+Do not have the prototype in the header file, instead have the prototypes seperatly defined in each file, except have them prefaced with `static` to give them internal linkage to their own file, and have one return `int` and the other `double`.
 
 **BA**:
 
+You can have sepertate static definitions in each file. Or, each file can define the appropriate function in an unnamed namespace.
 
+*file1.cpp*
+```
+namesapce
+{
+    int average(int x, int y)
+}
+```
+
+*file2.cpp*
+```
+namesapce
+{
+    double average(int x, int y)
+}
+```
 
 ## Question 6: 
 What does the following two file program display?
@@ -136,7 +241,7 @@ int main(void)
         cout << x << endl;
         cout << y << endl;
     }
-    outher();
+    other();
     another();
 
     return 0;
@@ -168,11 +273,23 @@ void another(void)
 
 **MA**:
 
-
+```
+10
+4
+Other: 10, 1
+another(): 10, -4
+```
+Forgot that y has a value automatically instatiated.
 
 **BA**:
 
-
+```
+10
+4
+0
+Other: 10, 1
+another(): 10, -4
+```
 
 ## Question 7: 
 What will the following program display?
@@ -225,10 +342,22 @@ void other()
 
 **MA**:
 
-
+```
+1
+4, 1, 2
+2
+2
+4, 1, 2
+2
+```
 
 **BA**:
 
-
-
-
+```
+1
+4, 1, 2
+2
+2
+4, 1, 2
+2
+```
