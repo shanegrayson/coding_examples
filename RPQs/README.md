@@ -4,7 +4,7 @@
 
 I am creating this section just for some random programming questions I feel like solving.
 
-For example, this was my first attempt at a RPQ: https://github.com/shanegrayson/coding_examples/blob/master/CPPPlayground/RPQs/FizzBuzz
+For example, this was my first attempt at a RPQ: https://github.com/shanegrayson/coding_examples/tree/master/RPQs/FizzBuzz
 
 I came across this statment in an article I read (http://web.archive.org/web/20161003201657/https://blog.codinghorror.com/why-cant-programmers-program/) which one of the interviewees stated:
 
