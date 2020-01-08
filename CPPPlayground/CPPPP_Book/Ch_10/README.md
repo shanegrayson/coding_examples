@@ -113,8 +113,9 @@ Bank::Bank(const std::string &s = "No Name", unsigned int an = 0, dou
 
 void Bank::show(void) const
 {
-    std::ios_base::fmtflags orig = std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
-    std::streamsize prec = std::cout.precision(3);
+    using std::ios_base;
+    ios_base::fmtflags orig = std::cout.setf(ios_base::fixed, ios_base::floatfield);
+    std::streamsize prec = std::cout.precision(3);
 
     std::cout << "Account Holder: " << name << std::endl;
     std::cout << "Account Number: " << account_num << std::endl;
