@@ -3,7 +3,7 @@
  * Exercise 5: stack.cpp
  * Author: Shane Grayson
  * Created: 01/10/2020
- * Type: Header File
+ * Type: Source Code File
  **********************************************************/
 #include "stack.h"
 
