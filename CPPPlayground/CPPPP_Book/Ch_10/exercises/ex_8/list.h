@@ -24,9 +24,8 @@ public:
     bool list_empty() const;
     bool list_add(const Item &item);
     void peek();
-    void visit(void (*pf)(Item &));
+    void visit(void (*pf)(Item &item));
+    void printList(void) const;
 };
-
-void process(Item &);
 
 #endif

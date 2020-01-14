@@ -49,14 +49,31 @@ void List::peek()
 
 void List::visit(void (*pf)(Item &item))
 {
-    for (int i = 0; i < MAX; i++)
+    //Originally was set to MAX, but seems it "end", looks the reason to be
+    //size of the list! duh! I was also a bit confused about Item &item params
+    for (int i = 0; i < end; i++)
     {
-        process(items[i]);
+        //My original answer
+        //process(items[i]);
+        //One I found online at: https://github.com/noahc66260/C-PrimerPlus/blob/master/Chapter10/list.cpp
+        (*pf)(items[i]);
     }
 }
 
-void process(Item &item)
+//I also read the problem as not making this function as a member function
+// found at: https://github.com/noahc66260/C-PrimerPlus/blob/master/Chapter10/list.cpp
+void List::printList(void) const
 {
-    std::cout << "Enter a new value: ";
-    std::cin >> item;
+    if (list_empty())
+    {
+        std::cout << "Nothing to return" << std::endl;
+        return;
+    }
+    else
+    {
+        for (size_t i = 0; i < end; i++)
+        {
+            std::cout << "Item " << i + 1 << ": " << items[i] << std::endl;
+        }
+    }
 }
