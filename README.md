@@ -10,8 +10,3 @@ Inside of https://github.com/shanegrayson/coding_examples/tree/master/CPPPlaygro
 Inside of https://github.com/shanegrayson/coding_examples/tree/master/CPlayground is my attempt at working through the book "The C Programming Language" by K&R. A few of the final questions I needed to take from the answer book.I only plan on going so far to have a bit move familiarity of C before moving onto the C++ Primer Plus book below.
 
 *NOTE*: I stopped working through this book because I started struggling with uderstanding the book in general. Many of the problems were being built on previous examples, one inparticular which I skipped because a global variable the book mentioned to use for a stack was not updating. Plus, I was just more excited to start the C++ Primer Plus book.
-
-## Ruby
-RubyPlayground is where I took a tutorial on the Ruby programming language. Many of the files were examples or exercises from the book.
-
-Inside of https://github.com/shanegrayson/coding_examples/tree/master/RubyPlayground/FFXIV_BiS_Solver is a program I'm working on as a side project that solves equipment issues in the Online Game Final Fantasy XIV.
